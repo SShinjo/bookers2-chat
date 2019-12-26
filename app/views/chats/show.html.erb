@@ -1,0 +1,13 @@
+<h1 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %> さんとのチャット</h1>
+
+<div class="message" style="width: 400px;">
+  <% @chats.each do |chat| %>
+    <% if chat.user_id == current_user %>
+      <p style="text-align: right; color:red;"><%= chat.content %></p>
+    <% else %>
+      <p style="text-align: left; color:green;"><%= chat.content %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<input type="text" class="post">

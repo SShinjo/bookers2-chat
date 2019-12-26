@@ -39,3 +39,9 @@
 	<% end %>
 <% end %>
 </div>
+
+<div class="row">
+<% unless current_user.id == user.id %>
+	<%= link_to 'チャットを始める', chat_path(user.id) %>
+<% end %>
+</div>
